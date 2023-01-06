@@ -36,6 +36,9 @@
       flex-direction: column;
       align-items: baseline;
     }
+    hr {
+      color: #cfd4da;
+    }
     .page {
       width: 210mm;
       min-height: 297mm;
@@ -48,33 +51,6 @@
     }
     .subpage {
       height: 257mm;
-    }
-
-    @page {
-      size: A4;
-      margin: 0;
-    }
-    @media print {
-      html,
-      body {
-        width: 210mm;
-        height: 297mm;
-      }
-      footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-      }
-      .page {
-        margin: 0;
-        border: initial;
-        border-radius: initial;
-        width: initial;
-        min-height: initial;
-        box-shadow: initial;
-        background: initial;
-        page-break-after: always;
-      }
     }
     .header {
       display: flex;
@@ -111,10 +87,75 @@
     .address-details {
       display: flex;
       justify-content: space-between;
+      margin-block: 2rem;
     }
     .address {
       display: flex;
       flex-direction: column;
+      width: 25%;
+    }
+    .period-wrapper {
+      width: 35%;
+      text-align: end;
+    }
+    .period-box {
+      display: flex;
+      flex-wrap: wrap;
+      margin-block: -10px;
+    }
+    .period-box > * {
+      flex: 1 1 100px;
+      margin: 2.5px 0;
+    }
+    .period-box span:nth-child(odd) {
+      font-weight: 600;
+    }
+    .charges-breakdown {
+    }
+    .charges-breakdown h3 {
+      display: flex;
+      justify-content: space-between;
+      padding-inline: 2rem;
+    }
+    .charges-breakdown_wrapper {
+      background: #f7fafc;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      padding-inline: 2rem;
+      padding-block: 1rem;
+    }
+    .charges-breakdown_wrapper div {
+      display: flex;
+      justify-content: space-between;
+      margin-block: 10px;
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+    @media print {
+      html,
+      body {
+        width: 210mm;
+        height: 297mm;
+      }
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+      }
+      .page {
+        margin: 0;
+        border: initial;
+        border-radius: initial;
+        width: initial;
+        min-height: initial;
+        box-shadow: initial;
+        background: initial;
+        page-break-after: always;
+      }
     }
   </style>
   <body>
@@ -129,22 +170,32 @@
               <span>Warren Harding </span>
               <span>1921 State St. #29 Camarillo, CA 93010</span>
             </div>
-            <div>
-              <div class="row">
-                <div class="column" style="background-color: #aaa">
-                  <p>Some text..</p>
-                </div>
-                <div class="column" style="background-color: #bbb">
-                  <p>Some text..</p>
-                </div>
+            <div class="period-wrapper">
+              <div class="period-box">
+                <span>Billing period</span
+                ><span>Oct 28, 2022 - Nov 29, 2022</span><span>Due Date</span
+                ><span>Dec 27, 2022</span><span>Invoice</span><span>00050</span>
               </div>
-              <span>Billing period</span><span>Oct 28, 2022 - Nov 29, 2022</span
-              ><span>Due Date</span><span>Dec 27, 2022</span><span>Invoice</span
-              ><span>00050</span>
             </div>
           </div>
           <hr />
-          <div class="charges-breakdown"></div>
+          <div class="charges-breakdown">
+            <h3><span>Total Due</span><span>$103.18</span></h3>
+            <div class="charges-breakdown_wrapper">
+              <div>
+                <span>Bill if you did not have Solar</span><span>$112.71</span>
+              </div>
+              <div><span>Total Savings</span><span>$9.53</span></div>
+              <div>
+                <span>Total Moneytree Power Solar Charges</span
+                ><span>$85.74</span>
+              </div>
+              <div>
+                <span>Southern California Edison Utility Charges</span
+                ><span>$17.44</span>
+              </div>
+            </div>
+          </div>
           <div class="power-chart"></div>
           <div class="your-impact"></div>
         </div>
