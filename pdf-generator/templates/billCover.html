@@ -108,6 +108,14 @@
       line-height: 22px;
       font-weight: bold;
     }
+    .address-details {
+      display: flex;
+      justify-content: space-between;
+    }
+    .address {
+      display: flex;
+      flex-direction: column;
+    }
   </style>
   <body>
     <div class="book">
@@ -115,9 +123,27 @@
         <div class="subpage">
           <div class="header">
             <img src="./Brand.svg" alt="moneytree" />
-            <span class="pages">page 1 of 3</span>
           </div>
-          <div class="address-details"></div>
+          <div class="address-details">
+            <div class="address">
+              <span>Warren Harding </span>
+              <span>1921 State St. #29 Camarillo, CA 93010</span>
+            </div>
+            <div>
+              <div class="row">
+                <div class="column" style="background-color: #aaa">
+                  <p>Some text..</p>
+                </div>
+                <div class="column" style="background-color: #bbb">
+                  <p>Some text..</p>
+                </div>
+              </div>
+              <span>Billing period</span><span>Oct 28, 2022 - Nov 29, 2022</span
+              ><span>Due Date</span><span>Dec 27, 2022</span><span>Invoice</span
+              ><span>00050</span>
+            </div>
+          </div>
+          <hr />
           <div class="charges-breakdown"></div>
           <div class="power-chart"></div>
           <div class="your-impact"></div>
