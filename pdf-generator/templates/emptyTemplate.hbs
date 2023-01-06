@@ -1,0 +1,61 @@
+<style>
+  body { width: 100%; height: 100%; margin: 0; padding: 0; background-color:
+  #fafafa; font-family: -apple-system, system-ui, Helvetica Neue, Arial,
+  Helvetica, sans-serif; } * { box-sizing: border-box; -moz-box-sizing:
+  border-box; } footer { background-color: #047857; position: absolute; width:
+  794px; height: 75.5px; left: 351px; display: flex; flex-direction: row;
+  justify-content: space-between; padding: 8px 24px; color: #fff; } footer div {
+  display: flex; flex-direction: column; align-items: baseline; } .page { width:
+  210mm; min-height: 297mm; padding: 10mm; margin: 10mm auto; border: 1px
+  #d3d3d3 solid; border-radius: 5px; background: white; box-shadow: 0 0 5px
+  rgba(0, 0, 0, 0.1); } .subpage { height: 257mm; } @page { size: A4; margin: 0;
+  } @media print { html, body { width: 210mm; height: 297mm; } footer {
+  position: fixed; bottom: 0; left: 0; } .page { margin: 0; border: initial;
+  border-radius: initial; width: initial; min-height: initial; box-shadow:
+  initial; background: initial; page-break-after: always; } } .header { display:
+  flex; flex-direction: row; justify-content: space-between; } .header img {
+  width: 160px; } .pages { color: #6c6c6c; font-size: small; } #footer-1 {
+  font-size: 10px; } #footer-1 img { height: 40px; } #footer-2 h2 { margin:
+  auto; font-style: normal; font-weight: 500; font-size: 1.25rem; line-height:
+  20px; } #footer-3 { margin-right: 1.4rem; } #footer-3 span:first-child {
+  line-height: 22px; font-weight: bold; }
+</style>
+<body>
+  <div class="book">
+    <div class="page">
+      <div class="subpage">
+        <div class="header">
+          <img src="{{logo}}" alt="moneytree" />
+          <span class="pages">page 1 of 3</span>
+        </div>
+      </div>
+      <footer>
+        <div id="footer-1">
+          <img src="{{logoFooter}}" alt="moneytree footer" />
+          <span>© Copyright Moneytree Sustainability Inc.</span>
+        </div>
+        <div id="footer-2"><h2>Get in touch with us!</h2></div>
+        <div id="footer-3">
+          <span>Ross Gruber - Co-Founder</span><span
+          >ross@moneytreepower.com</span><span>(818)259-3758</span>
+        </div>
+      </footer>
+    </div>
+    <div class="page">
+      <div class="subpage">
+        <div class="header">
+          <img src="{{logo}}" alt="moneytree" />
+          <span class="pages">page 2 of 3</span>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <div class="subpage">
+        <div class="header">
+          <img src="{{logo}}" alt="moneytree" />
+          <span class="pages">page 3 of 3</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
