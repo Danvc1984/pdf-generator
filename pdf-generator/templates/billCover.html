@@ -39,6 +39,10 @@
     hr {
       color: #cfd4da;
     }
+    b {
+      font-size: 1rem;
+      margin-right: 3px;
+    }
     .page {
       width: 210mm;
       min-height: 297mm;
@@ -111,6 +115,7 @@
       font-weight: 600;
     }
     .charges-breakdown {
+      color: #2d3748;
     }
     .charges-breakdown h3 {
       display: flex;
@@ -129,6 +134,120 @@
       display: flex;
       justify-content: space-between;
       margin-block: 10px;
+    }
+    .power-chart {
+      margin-top: 2rem;
+      background: #f0fff4;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: row;
+      padding-inline: 2rem;
+      padding-block: 1rem;
+      justify-content: space-between;
+      color: #2d3748;
+    }
+    .power-chart section {
+      display: flex;
+      flex-direction: column;
+    }
+    .power-chart section h3 {
+      margin-top: 0;
+    }
+    #rate-details div {
+      margin-bottom: 8px;
+    }
+    #rate-details div span:first-child {
+      font-weight: 600;
+    }
+    #power-provided {
+      text-align: center;
+      width: 50%;
+    }
+    .power-chart_wrapper {
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .power-chart_stats {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: -30px;
+      font-weight: bold;
+    }
+    .power-chart_stats div {
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+    }
+    #power-chart_solar span:first-child {
+      color: #047857;
+    }
+    #power-chart_grid span:first-child {
+      color: #9ea7b0;
+    }
+    .semi-donut {
+      --percentage: 0;
+      --fill: #047857;
+      width: 261px;
+      height: 121px;
+      position: relative;
+      color: #fff;
+      overflow: hidden;
+      color: var(--fill);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+    .semi-donut:after {
+      content: "";
+      width: 260px;
+      height: 260px;
+      border: 50px solid;
+      border-color: #cbd5e0 #cbd5e0 var(--fill) var(--fill);
+      position: absolute;
+      border-radius: 50%;
+      left: 0;
+      top: 0;
+      box-sizing: border-box;
+      transform: rotate(calc(1deg * (-45 + var(--percentage) * 1.8)));
+    }
+    .your-impact {
+      padding-inline: 2rem;
+      padding-block: 1rem;
+      justify-content: space-between;
+    }
+    .your-impact h3 {
+      text-align: center;
+      color: #047857;
+    }
+    .your-impact section {
+      padding-inline: 56px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .your-impact section div div {
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .your-impact section div div span:first-child {
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 16px;
+      color: #2d3748;
+      margin-bottom: 5px;
+    }
+    .your-impact section div div span:last-child {
+      display: flex;
+      align-items: center;
+      font-size: 0.85rem;
+    }
+    .your-impact section div div span img {
+      margin-right: 7px;
     }
 
     @page {
@@ -196,8 +315,63 @@
               </div>
             </div>
           </div>
-          <div class="power-chart"></div>
-          <div class="your-impact"></div>
+          <div class="power-chart">
+            <section id="power-provided">
+              <h3>Power provided from Solar vs Grid</h3>
+              <div class="power-chart_wrapper">
+                <div class="power-chart_stats">
+                  <div id="power-chart_solar">
+                    <span>Solar</span><span>78.5%</span>
+                  </div>
+
+                  <div id="power-chart_grid">
+                    <span>Grid</span><span>21.5%</span>
+                  </div>
+                </div>
+
+                <div class="semi-donut" style="--percentage: 78.5"></div>
+              </div>
+            </section>
+            <section id="rate-details">
+              <h3>Rate details</h3>
+              <div><span>Rate plan: </span><span>Time of Use 4-9pm</span></div>
+              <div>
+                <span>Utility: </span><span>Southern California Edison</span>
+              </div>
+              <div>
+                <span>Generation: </span><span>Clean Power Alliance</span>
+              </div>
+            </section>
+          </div>
+          <div class="your-impact">
+            <h3>Your impact with Moneytree Power makes a difference</h3>
+            <section>
+              <div>
+                <div>
+                  <span>Lifetime Solar Energy Used</span
+                  ><span
+                    ><img src="./lightning.svg" alt="lightning" />
+                    <b> 3835 </b> Kwh used</span
+                  >
+                </div>
+                <div>
+                  <span>Avoided CO2 emissions</span
+                  ><span
+                    ><img src="./cart.svg" alt="cart" /><b> 1967 </b> lbs of
+                    CO2</span
+                  >
+                </div>
+                <div>
+                  <span>Equivalent of planting</span
+                  ><span
+                    ><img src="./tree.svg" alt="tree" /><b> 4.5 </b> new
+                    trees</span
+                  >
+                </div>
+              </div>
+              <img src="./background.svg" alt="tree-graphic" />
+            </section>
+          </div>
         </div>
         <footer>
           <div id="footer-1">

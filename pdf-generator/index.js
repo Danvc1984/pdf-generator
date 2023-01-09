@@ -8,7 +8,7 @@ const data = {
   address: "1921 State St. #29 Camarillo, CA 93010",
   billingPeriod: "Oct 28, 2022 - Nov 29, 2022",
   dueDate: "Dec 27, 2022",
-  invoice: 00050,
+  invoice: "00050",
   totalDue: "$103.18",
   billBeforeSolar: "$112.71",
   totalSaving: "$9.53",
@@ -29,6 +29,18 @@ const data = {
   */
   logo: `data:image/svg+xml;base64,${fs
     .readFileSync("./templates/Brand.svg")
+    .toString("base64")}`,
+  lightning: `data:image/svg+xml;base64,${fs
+    .readFileSync("./templates/lightning.svg")
+    .toString("base64")}`,
+  cart: `data:image/svg+xml;base64,${fs
+    .readFileSync("./templates/cart.svg")
+    .toString("base64")}`,
+  tree: `data:image/svg+xml;base64,${fs
+    .readFileSync("./templates/tree.svg")
+    .toString("base64")}`,
+  background: `data:image/svg+xml;base64,${fs
+    .readFileSync("./templates/bacground.svg")
     .toString("base64")}`,
   logoFooter: `data:image/svg+xml;base64,${fs
     .readFileSync("./templates/Brand-white.svg")
